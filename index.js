@@ -30,11 +30,13 @@ async function invokeAction({ action, id, name, email, phone }) {
     case 'get':
       try {
         const foundContact = await getContactById(id);
-        if (foundContact) {
-          console.log('Found contact:\n', foundContact);
-        } else {
-          console.log('Contact not found by this id.');
-        }
+        console.log('Found contact:\n', foundContact);
+        // if (foundContact) {
+        //   console.log('Found contact:\n', foundContact);
+        // } else {
+        //   // console.log('null');
+        //   return null;
+        // }
       } catch (error) {
         console.error('Error:', error.message);
       }
