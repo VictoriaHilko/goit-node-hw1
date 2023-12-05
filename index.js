@@ -31,12 +31,6 @@ async function invokeAction({ action, id, name, email, phone }) {
       try {
         const foundContact = await getContactById(id);
         console.log('Found contact:\n', foundContact);
-        // if (foundContact) {
-        //   console.log('Found contact:\n', foundContact);
-        // } else {
-        //   // console.log('null');
-        //   return null;
-        // }
       } catch (error) {
         console.error('Error:', error.message);
       }
@@ -54,11 +48,12 @@ async function invokeAction({ action, id, name, email, phone }) {
     case 'remove':
       try {
         const removedContact = await removeContact(id);
-        if (removedContact) {
-          console.log('Removed contact:\n', removedContact);
-        } else {
-          console.log('Contact not found by this id.');
-        }
+        console.log('Removed contact:\n', removedContact);
+        // if (removedContact) {
+        //   console.log('Removed contact:\n', removedContact);
+        // } else {
+        //   console.log('Contact not found by this id.');
+        // }
       } catch (error) {
         console.error('Error:', error.message);
       }
